@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity"
+    android:scrollbars="none">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <com.scwang.wave.MultiWaveHeader
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:id="@+id/wave"
+        app:mwhStartColor="@color/purple_200"
+        app:mwhCloseColor="@color/purple_700"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-330dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="Coronavirus Updates Bangladesh"
+            android:fontFamily="@font/poppins_regular"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Developed by Muztahid Durjoy"
+        android:fontFamily="@font/poppins_regular"
+        android:textAlignment="center"
+        android:textColor="#D5D5D5"
+        android:textStyle="bold"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/visitSite"
+        style="@style/Widget.MaterialComponents.Button"
+        android:drawableLeft="@drawable/ic_baseline_open_in_new_24"
+        android:text="Visit Government Site"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="মোট করোনা পরিস্থিতি"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="25dp"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_affected"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/warning"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="আক্রান্ত"
+                    android:textAlignment="center"
+                    android:textColor="#C67D0E" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_dead"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="মৃত্যু"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_recovered"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/success"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="সুস্থ"
+                    android:textAlignment="center"
+                    android:textColor="@color/success" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_active_cases"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/warning"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="চলমান কেস"
+                    android:textAlignment="center"
+                    android:textColor="#C67D0E" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_critical_cases"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="মারাত্বক কেস"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_tested"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="#FA5700"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="টেস্ট করেছেন"
+                    android:textAlignment="center"
+                    android:textColor="#FA5700" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="আজকের করোনা পরিস্থিতি"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        android:textSize="25dp"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/today_affected"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/warning"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="আক্রান্ত"
+                    android:textAlignment="center"
+                    android:textColor="#C67D0E" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/today_dead"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="মৃত্যু"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/today_recovered"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/success"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="সুস্থ"
+                    android:textAlignment="center"
+                    android:textColor="@color/success" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/today_total_case"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/warning"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="আজকের মোট কেস"
+                    android:textAlignment="center"
+                    android:textColor="#C67D0E" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/today_critical_case"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="মারাত্বক কেস"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/today_tested"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="#FA5700"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="টেস্ট করেছেন"
+                    android:textAlignment="center"
+                    android:textColor="#FA5700" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    <Button
+        android:id="@+id/refreshtoday"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_marginTop="20dp"
+        android:text="রিফ্রেশ"
+        style="@style/Widget.MaterialComponents.Button"
+        android:drawableTop="@drawable/ic_baseline_refresh_24"/>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="আজকের অনুপাত"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        android:textSize="25dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/today_death_ratio"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="মৃত্যুর অনুপাত"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/today_recover_ratio"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/success"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="সুস্থতার অনুপাত"
+                    android:textAlignment="center"
+                    android:textColor="@color/success" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="মোট অনুপাত"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        android:textSize="25dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_death_ratio"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="মৃত্যুর অনুপাত"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EAEAEA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_recover_ratio"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/success"
+                    android:textSize="25dp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:text="সুস্থতার অনুপাত"
+                    android:textAlignment="center"
+                    android:textColor="@color/success" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_regular"
+        android:text="animations collected from lottie animations"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Font Used: Poppins"/>
+</LinearLayout>
+</ScrollView>
